@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/Completed.dart';
+import 'package:food_app/Completed.dart';
+import 'package:food_app/DeliveryMethod.dart';
 
 // ignore: must_be_immutable
 class Payment extends StatefulWidget{
@@ -22,7 +23,11 @@ class _PaymentState extends State<Payment> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 240, 242, 245),
         title: IconButton(onPressed: (){
-          Navigator.pop(context);
+          Navigator.pop(context,
+            MaterialPageRoute(
+              builder: (context) => const Delivery(),
+            )
+          );
         }, icon: const Icon(Icons.arrow_back)),
       ),
       backgroundColor: const Color.fromARGB(255, 240, 242, 245),
@@ -32,11 +37,11 @@ class _PaymentState extends State<Payment> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children :[
                 if(widget.payment=='MasterCard')
-                Transform.scale(scale : 4 ,child: Image.asset('images/mastercard.png'))
+                Transform.scale(scale : 4 ,child: Image.asset('lib/image/mastercard.png'))
                 else if(widget.payment=='Stripe')
-                Transform.scale(scale : 4,child: Image.asset('images/stripe.png'))
+                Transform.scale(scale : 4,child: Image.asset('lib/image/stripe.png'))
                 else if(widget.payment=='PayPal')
-                Transform.scale(scale : 4,child: Image.asset('images/paypal.png')),
+                Transform.scale(scale : 4,child: Image.asset('lib/image/paypal.png')),
                 Text("Payment with ${widget.payment}",style: const TextStyle(fontSize: 30),),
                  Container(
                    decoration: BoxDecoration(

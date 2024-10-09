@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/Completed.dart';
+import 'package:food_app/Completed.dart';
+import 'package:food_app/Home_page/screen/Home_page.dart';
 import 'Payment.dart';
 
 class Delivery extends StatefulWidget {
@@ -36,7 +37,11 @@ class _DeliveryState extends State<Delivery> {
           backgroundColor: Colors.white,
           title: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.of(context).pop(
+                MaterialPageRoute(
+                  builder: (context) => const HomePage(),
+                )
+              );
             },
             icon: const Icon(Icons.arrow_back),
           ),
@@ -96,7 +101,7 @@ class _DeliveryState extends State<Delivery> {
                             payment = "MasterCard";
                           } else if (IsMasterCard == false) payment = null;
                         },
-                        child: Image.asset("images/mastercard.png")),
+                        child: Image.asset("lib/image/mastercard.png")),
                   ),
                   Container(
                     //paypal
@@ -120,7 +125,7 @@ class _DeliveryState extends State<Delivery> {
                             payment = "PayPal";
                           } else if (IsPayPal == false) payment = null;
                         },
-                        child: Image.asset("images/paypal.png")),
+                        child: Image.asset("lib/image/paypal.png")),
                   ),
                   Container(
                     //stripe
@@ -144,7 +149,7 @@ class _DeliveryState extends State<Delivery> {
                             payment = "Stripe";
                           } else if (IsStripe == false) payment = null;
                         },
-                        child: Image.asset("images/stripe.png")),
+                        child: Image.asset("lib/image/stripe.png")),
                   ),
                 ],
               ),

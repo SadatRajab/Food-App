@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/DeliveryMethod.dart';
+import 'package:food_app/DeliveryMethod.dart';
+import 'package:food_app/Home_page/screen/Home_page.dart';
 
 class CompletedOrder extends StatelessWidget {
   const CompletedOrder({super.key});
@@ -11,7 +12,11 @@ class CompletedOrder extends StatelessWidget {
         appBar: AppBar(
             backgroundColor: Colors.white,
             title : IconButton(onPressed: () {
-              Navigator.pop(context);
+              Navigator.of(context).pop(
+                MaterialPageRoute(
+                  builder: (context) => const Delivery(),
+                )
+              );
             },icon: const Icon(Icons.arrow_back),
             )),
         backgroundColor: Colors.white,
@@ -19,7 +24,7 @@ class CompletedOrder extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Image.asset("images/Group 457.png"),
+              Image.asset("lib/image/Group 457.png"),
               const Text(
                 "Your order has been\nsuccessfully placed",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -37,7 +42,7 @@ class CompletedOrder extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Delivery()));
+                              builder: (context) => const HomePage()));
                     },
                     child: const Text(
                       "Go Back to home",

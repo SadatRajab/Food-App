@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_app/DeliveryMethod.dart';
 import 'package:food_app/Home_page/screen/Home_page.dart';
 import 'package:food_app/descrip_Page_food/Count_Cupit/count_cupit.dart';
 import 'package:food_app/descrip_Page_food/Count_Cupit/count_state.dart';
@@ -172,7 +173,11 @@ Widget descrip_Page_food({
                           color: Color(0xffF9881F),
                           borderRadius: BorderRadius.circular(27)),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Delivery(),
+                          ));
+                        },
                         child: Text(
                           "Add Card",
                           style: GoogleFonts.dmSans(
