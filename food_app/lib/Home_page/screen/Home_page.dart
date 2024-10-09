@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_app/DeliveryMethod.dart';
 import 'package:food_app/Home_page/Cupit/food_cupit.dart';
 import 'package:food_app/Home_page/style/food_Item.dart';
 import 'package:food_app/descrip_Page_food/Pizza_descrip/Baby_Roni_Pizza_Des.dart';
@@ -310,7 +311,14 @@ class _HomePageState extends State<HomePage> {
                   label: 'Search'
                   ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart_outlined),
+                  icon: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context)=>Delivery())
+                      );
+                    },
+                    icon: Icon(Icons.shopping_cart_outlined),
+                  ),
                   label: 'Cart'
                   ),
             ],
