@@ -314,7 +314,7 @@ class _HomePageState extends State<HomePage> {
                   icon: IconButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context)=>Delivery())
+                        MaterialPageRoute(builder: (context)=>Cartpage())
                       );
                     },
                     icon: Icon(Icons.shopping_cart_outlined),
